@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() { 
+document.addEventListener('DOMContentLoaded', function () {
     let div = document.createElement('div');
     div.className = 'header-container'; //step 3
     document.body.appendChild(div);
@@ -15,32 +15,32 @@ document.addEventListener('DOMContentLoaded', function() {
     h2.appendChild(h2Txt);
     h2.className = 'h2';
     div.appendChild(h2);
-    
+
     let h3 = document.createElement('h3');
     let h3Txt = document.createTextNode('This is an h3');
     h3.appendChild(h3Txt);
     h3.className = 'h3';
     div.appendChild(h3);
-    
+
     let h4 = document.createElement('h4');
     let h4Txt = document.createTextNode('This is an h4');
     h4.appendChild(h4Txt);
     h4.className = 'h4';
     div.appendChild(h4);
-    
+
     let h5 = document.createElement('h5');
     let h5Txt = document.createTextNode('This is an h5');
     h5.appendChild(h5Txt);
     h5.className = 'h5';
     div.appendChild(h5);
-    
+
     let h6 = document.createElement('h6');
     let h6Txt = document.createTextNode('This is an h6');
     h6.appendChild(h6Txt);
     h6.className = 'h6';
     div.appendChild(h6);
 
-        //step 9, random colors
+    //step 9, random colors
     const Colors = [
         "#c74d4c",
         "#f3a6c0",
@@ -53,37 +53,37 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     //step 9
-    function randomColor (){
-        let myRandomColor = Colors[Math.floor(Math.random()*Colors.length)]
+    function randomColor() {
+        let myRandomColor = Colors[Math.floor(Math.random() * Colors.length)]
         return myRandomColor;
     }
 
-     h1.addEventListener('dblclick', function (){
+    h1.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h1.style.color = myRandomColor;
     })
-    
-    h2.addEventListener('dblclick', function (){
+
+    h2.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h2.style.color = myRandomColor;
     })
-    
-    h3.addEventListener('dblclick', function (){
+
+    h3.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h3.style.color = myRandomColor;
     })
-    
-    h4.addEventListener('dblclick', function (){
+
+    h4.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h4.style.color = myRandomColor;
     })
-    
-    h5.addEventListener('dblclick', function (){
+
+    h5.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h5.style.color = myRandomColor;
     })
-    
-    h6.addEventListener('dblclick', function (){
+
+    h6.addEventListener('dblclick', function () {
         let myRandomColor = randomColor();
         h6.style.color = myRandomColor;
     })
@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     div.appendChild(ul);
 
     let listCount = 0;
-
+    
+    //step 11
     function insertToList() {
         listCount++;
         let li = document.createTextNode('li');
@@ -106,12 +107,16 @@ document.addEventListener('DOMContentLoaded', function() {
         li.appendChild(liText);
         ul.appendChild(li);
 
-        li.addEventListener('click', function() {
+        li.addEventListener('click', function () {
             let myRandomColor = randomColor();
             li.style.color = myRandomColor;
         })
 
-    }
+        li.addEventListener("dblclick", function () {
+            this.remove();
+        })
 
+    };
 
+    button.addEventListener('click', insertToList);
 })
